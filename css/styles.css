@@ -2,8 +2,15 @@ body {
     font-family: 'Montserrat', serif;
 }
 
+h2 {
+    font-family: 'Montserrat-Bold';
+    font-size: 3rem;
+    line-height: 1.5;
+}
 
 #title {
+    padding-left: 5em;
+    padding-right: 5em;
     background-color: #ff3c68;
     color: #ffff;
 }
@@ -44,4 +51,67 @@ body {
 
 .download-button {
     margin: 5% 3% 5% 0%;
+}
+
+.testimonials {
+    color: white;
+    text-align: center;
+    background-color: #ef8172;
+    position: relative;
+    padding: 7% 15%;
+}
+
+.testimonial-image {
+    width: 10%;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.carousel {
+    overflow-x: scroll;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: hidden;
+}
+
+.testimonials .btn {
+    font-family: 'Ubuntu';
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    margin-top: 20px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+
+    line-height: 10px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+#press {
+    background-color: #ef8172;
+    text-align: center;
+    padding-bottom: 3%;
+}
+
+.press-logo {
+    padding: 20px 20px 50px;
+    width: 15%;
+}
+
+.card {
+    text-align: center;
+}
+
+.plans {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.sign {
+    display: block;
+    width: 100%;
 }
