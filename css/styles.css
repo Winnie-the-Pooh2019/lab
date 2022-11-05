@@ -101,8 +101,17 @@ h2 {
     width: 15%;
 }
 
+.card-deck
+{
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .card {
     text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .plans {
