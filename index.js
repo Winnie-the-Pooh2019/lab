@@ -1,59 +1,47 @@
-$(document).ready(() => {
-    const crash = new Audio('./sounds/crash.mp3');
-    const kickBass = new Audio('./sounds/kick-bass.mp3');
-    const snare = new Audio('./sounds/snare.mp3');
-    const tom1 = new Audio('./sounds/tom-1.mp3');
-    const tom2 = new Audio('./sounds/tom-2.mp3');
-    const tom3 = new Audio('./sounds/tom-3.mp3');
-    const tom4 = new Audio('./sounds/tom-4.mp3');
+const cowsay = require("cowsay");
+const express = require('express');
+const app = express();
 
-    function play(keyCode) {
-        switch (keyCode) {
-            case 'w':
-                crash.currentTime = 0;
-                crash.play();
-                break;
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.static(__dirname));
+app.set('view engine', 'pug');
+app.set('views', '');
 
-            case 'a':
-                kickBass.currentTime = 0;
-                kickBass.play();
-                break;
+const router = express.Router();
 
-            case 's':
-                snare.currentTime = 0;
-                snare.play();
-                break;
+router.get('/', (req, res) => {
+    res.render('index.pug');
+});
 
-            case 'd':
-                tom1.currentTime = 0;
-                tom1.play();
-                break;
-
-            case 'j':
-                tom2.currentTime = 0;
-                tom2.play();
-                break;
-
-            case 'k':
-                tom3.currentTime = 0;
-                tom3.play();
-                break;
-
-            case 'l':
-                tom4.currentTime = 0;
-                tom4.play();
-                break;
-
-            default:
-                break;
-        }
-    }
-
-    $(document).keydown((event) => {
-        play(event.key);
+router.get('/name', (req, res) => {
+    const name = cowsay.say({
+        text: `Hello, ${req.query.name}`,
+        e : "oO",
+        T : "U "
     });
 
-    $('.drum').click((e) => {
-        play(e.target.innerText);
+    res.render('name.pug', {message: name});
+});
+
+app.use('/', router);
+
+function greet() {
+    console.log('Welcome to the club buddy!');
+}
+setTimeout (greet, 2000);
+
+function sayHello(name) {
+    console.log('Hello there');
+}
+let timerID = setInterval(sayHello, 3000);
+
+app.listen(8080).on("error", () => {
+    console.log('error');
+});
+
+process.on("SIGINT", () => {
+    Connection.getInstance().disconnect().then(r => {
+        process.exit();
     });
 });
