@@ -1,0 +1,8 @@
+builtins_platform=JS
+unique_name=org.example\:lab
+compiler_version=1.7.10
+depends=org.jetbrains.kotlinx\:kotlinx-nodejs io.ktor\:ktor-client-core io.ktor\:ktor-events io.ktor\:ktor-websocket-serialization io.ktor\:ktor-serialization io.ktor\:ktor-websockets io.ktor\:ktor-http io.ktor\:ktor-utils io.ktor\:ktor-io org.jetbrains.kotlinx\:kotlinx-coroutines-core org.jetbrains.kotlinx\:atomicfu kotlin org.jetbrains.kotlin\:kotlinx-atomicfu-runtime
+jsOutputName=lab
+abi_version=1.7.0
+metadata_version=1.4.1
+ir_version=1.0.0

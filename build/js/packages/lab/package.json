@@ -1,0 +1,12 @@
+{
+  "name": "lab",
+  "version": "1.0.0-SNAPSHOT",
+  "main": "kotlin/lab.js",
+  "devDependencies": {
+    "source-map-support": "0.5.21"
+  },
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": []
+}
